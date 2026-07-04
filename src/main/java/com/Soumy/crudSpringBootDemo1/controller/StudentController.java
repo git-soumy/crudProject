@@ -67,5 +67,16 @@ public class StudentController {
         return ResponseEntity.ok("Record Deleted");
     }
 
+    @DeleteMapping("/deleteAll")
+    public ResponseEntity<String> deleteAllStudent() {
+        Boolean isDeleted = studentService.deleteAllStudent();
+        if(!isDeleted){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok("All Record Deleted");
+    }
+
+
+
 
 }

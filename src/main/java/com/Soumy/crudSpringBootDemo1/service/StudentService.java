@@ -65,4 +65,12 @@ public class StudentService {
         return true;
 
     }
+
+    public Boolean deleteAllStudent() {
+        if (studentRepository.findAll().isEmpty()) {
+            return false;
+        }
+        studentRepository.deleteAll();
+        return true;
+    }
 }
